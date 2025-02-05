@@ -22,7 +22,7 @@ export const NavItem = ({ label, isActive, onClick }: INavItemProps) => {
 
       <span
         className={`absolute left-0 w-full h-[1px] bg-gradient-to-r from-[#7D208E] to-[#0A45F6] transition-all duration-300 
-          ${isActive ? 'opacity-100' : 'opacity-0'} bottom-[3px] lg:bottom-[-33px]`}
+          ${isActive ? 'opacity-100' : 'opacity-0'} bottom-[3px] lg:bottom-[-33px] lg-plus:bottom-[-37px]`}
       ></span>
     </li>
   )
