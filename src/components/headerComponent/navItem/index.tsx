@@ -12,8 +12,8 @@ export const NavItem = ({ label, isActive, onClick }: INavItemProps) => {
     <li className="w-max relative">
       <a
         href="#"
-        className={` text-[18px] font-bold leading-[2.2rem] cursor-pointer pb-2 lg-plus:text-[20px] lg:pb-0 transition-all
-          ${isActive ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#7D208E] to-[#0A45F6]' : 'text-[#E2E2E2]'}
+        className={` text-[18px] font-bold leading-[2.2rem] cursor-pointer pb-2 lg-plus:text-xl lg:pb-0 transition-all
+          ${isActive ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#7D208E] to-[#0A45F6]' : 'text-gray-300'}
           hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#7D208E] hover:to-[#0A45F6]`}
         onClick={() => onClick(label)}
       >
