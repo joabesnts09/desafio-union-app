@@ -19,7 +19,7 @@ export const Button = ({ text, onClick, className }: IButtonProps) => {
     >
       <span className='relative z-10'>{text}</span>
 
-      <div className='absolute inset-0 bg-gradient-to-r from-[#7D208E] to-[#0A45F6] transform origin-right transition-transform duration-500 ease-in-out group-hover:scale-x-0'></div>
+      <div className='absolute inset-0 bg-gradient-to-r from-[#7D208E] to-[#0A45F6] transform origin-right transition-transform duration-500 ease-in-out lg:group-hover:scale-x-0'></div>
 
       <div
         className='absolute inset-0 pointer-events-none rounded-sm'

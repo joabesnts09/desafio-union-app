@@ -1,5 +1,4 @@
 import { Button } from '../ui/button'
-// import '../../../public/imgs/hero_mobile_1.jpg'
 
 export const PresentationUnion = () => {
   return (
@@ -24,8 +23,8 @@ export const PresentationUnion = () => {
           sua carreira como desenvolvedor!
         </p>
 
-        <a className='w-[343px] h-[69px] mt-4' href='#'>
-          <Button text='Quero participar' />
+        <a className='w-[343px] h-[69px] mt-4 p-0' href='#'>
+          <Button className='text-[22px]' text='Quero participar' />
         </a>
       </div>
 
