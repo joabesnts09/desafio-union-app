@@ -57,7 +57,7 @@ export const HeaderComponent = () => {
             ></span>
           </button>
           <nav
-            className={`absolute top-full left-0 w-full bg-[#121119] text-white flex flex-col items-start pt-[40px] pl-[20px] pb-[20px] lg:items-center lg:p-0 lg:w-max
+            className={`z-50 absolute top-full left-0 w-full bg-[#121119] text-white flex flex-col items-start pt-[40px] pl-[20px] pb-[20px] lg:items-center lg:p-0 lg:w-max
           ${
             menuOpen ? 'block' : 'hidden'
           } lg:static lg:flex lg:flex-row lg:items-center lg:gap-6 lg:pb-0`}
@@ -73,8 +73,8 @@ export const HeaderComponent = () => {
               ))}
             </ul>
 
-            <div className='mt-4 w-[180px] h-[59px] lg:w-[167px] lg-plus:w-[300px] lg:mt-0 lg:hidden'>
-              <Button text='Junte-se a nós'/>
+            <div className='mt-4 mb-4 w-[190px] h-[59px] lg:w-[167px] lg-plus:w-[300px] lg:mt-0 lg:hidden'>
+              <Button className='text-lg tracking-wider' text='Junte-se a nós'/>
             </div>
           </nav>
           <div className='mt-4 hidden lg:mt-0 w-[180px] h-[59px] lg:w-[167px] lg-plus:w-[300px] lg:flex'>

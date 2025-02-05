@@ -8,6 +8,19 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        'move-up-down': 'moveUpDown 2s ease-in-out infinite',
+      },
+      keyframes: {
+        moveUpDown: {
+          '0%, 100%': {
+            transform: 'translateY(0)',
+          },
+          '50%': {
+            transform: 'translateY(-10px)',
+          },
+        },
+      },
       screens: {
         'lg-plus': '1400px',
       },

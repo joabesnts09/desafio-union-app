@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <HeaderComponent/>
-      <main>
+      <main className=''>
         <PresentationUnion />
       </main>
     </>
