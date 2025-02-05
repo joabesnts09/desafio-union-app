@@ -4,6 +4,7 @@ import Image from 'next/image'
 import logoUnion from '../../../public/imgs/logo-union-developers.svg'
 import { useState } from 'react'
 import { NavItem } from './navItem'
+import { Button } from '../ui/button'
 
 export const HeaderComponent = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -72,16 +73,12 @@ export const HeaderComponent = () => {
               ))}
             </ul>
 
-            <div className='mt-4 lg:mt-0 lg:hidden'>
-              <button className='w-[180px] h-[59px] lg:w-[167px] lg-plus:w-[300px] bg-blue-500 text-white px-4 py-2 rounded'>
-                <p>Junte-se a nós</p>
-              </button>
+            <div className='mt-4 w-[180px] h-[59px] lg:w-[167px] lg-plus:w-[300px] lg:mt-0 lg:hidden'>
+              <Button text='Junte-se a nós'/>
             </div>
           </nav>
-          <div className='mt-4 lg:mt-0 hidden lg:flex'>
-            <button className='w-[180px] h-[59px] lg:w-[167px] lg-plus:w-[300px] bg-blue-500 text-white px-4 py-2 rounded'>
-              <p>Junte-se a nós</p>
-            </button>
+          <div className='mt-4 hidden lg:mt-0 w-[180px] h-[59px] lg:w-[167px] lg-plus:w-[300px] lg:flex'>
+            <Button text='Junte-se a nós'/>
           </div>
         </div>
       </header>
