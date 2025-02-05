@@ -2,9 +2,9 @@
 
 import Image from 'next/image'
 import logoUnion from '../../../public/imgs/logo-union-developers.svg'
-
 import { useState } from 'react'
 import { NavItem } from './navItem'
+
 export const HeaderComponent = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeItem, setActiveItem] = useState('Benefícios') 
@@ -29,6 +29,7 @@ export const HeaderComponent = () => {
               alt='Logo Union'
               width={265}
               height={40}
+              priority
             />
           </div>
 
