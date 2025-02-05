@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'lg-plus': '1400px',
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
