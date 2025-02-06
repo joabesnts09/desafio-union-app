@@ -4,7 +4,7 @@ import Image from 'next/image'
 export const PresentationUnion = () => {
   return (
     <>
-      <div
+      <section
         className={`w-full pt-14 pb-3 px-4 bg-[url('/imgs/hero_mobile_1.jpg')] bg-cover  bg-top md:bg-[url('/imgs/hero-desktop-v2.jpg')] lg:gap-[1.4rem]`}
       >
         <div className='w-full flex lg:items-center lg:justify-center'>
@@ -35,7 +35,7 @@ export const PresentationUnion = () => {
             <Image className='max-w-[520px]' src={curvedRender} alt='Curved Render' />
           </div>
         </div>
-      </div>
+      </section>
     </>
   )
 }
