@@ -7,7 +7,6 @@ interface INavItemProps {
 
 export const NavItem = ({ label, isActive, onClick }: INavItemProps) => {
 
-
   return (
     <li className="w-max relative">
       <a

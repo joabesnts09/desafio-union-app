@@ -8,7 +8,7 @@ export const PresentationUnion = () => {
         className={`w-full pt-14 pb-3 px-4 bg-[url('/imgs/hero_mobile_1.jpg')] bg-cover  bg-top md:bg-[url('/imgs/hero-desktop-v2.jpg')] lg:gap-[1.4rem]`}
       >
         <div className='w-full flex lg:items-center lg:justify-center'>
-          <div className={`flex flex-col gap-4 mb-6 lg:w-[754px] lg:pb-[199px] lg:pt-[208px]`}>
+          <div className={`flex flex-col gap-4 mb-6 lg:w-[754px] lg:pb-[32px] lg:pt-[199px] lg-plus:pb-[130px] `}>
             <div>
               <h1 className='w-[383px] text-white text-xl font-bold md:text-[42px] md:w-[550px] md:leading-relaxed'>
                 Ganhe{' '}
@@ -19,7 +19,7 @@ export const PresentationUnion = () => {
               </h1>
             </div>
 
-            <p className='w-[321px] text-base text-gray-300 leading-relaxed md:text-2xl md:w-[650px] lg-w-full md:tracking-tight md:leading-[2.3rem]'>
+            <p className='w-[321px] text-base text-gray-200 leading-[1.5] md:text-2xl md:w-[650px] lg-w-full md:tracking-tight md:leading-[2.3rem]'>
               Descubra como o Union oferece um ambiente prático e imersivo para
               desenvolvedores juniors ganharem experiência de mercado, mesmo sem
               estar em uma empresa. Participe dessa experiência única e
