@@ -1,6 +1,7 @@
 import { AboutUs } from '@/components/aboutUs'
 import { HeaderComponent } from '@/components/headerComponent'
 import { PresentationUnion } from '@/components/presentation'
+import { SeparatorY } from '@/components/ui/separatorY'
 
 
 export default function Home() {
@@ -9,7 +10,9 @@ export default function Home() {
       <HeaderComponent/>
       <main className='bg-[#1F1D2B]'>
         <PresentationUnion />
-        <div className='bg-[#1F1D2B] px-4 flex items-center'>
+        <div className='bg-[#1F1D2B] px-4 flex flex-col justify-center'>
+          <AboutUs />
+          <SeparatorY/>
           <AboutUs />
         </div>
       </main>
