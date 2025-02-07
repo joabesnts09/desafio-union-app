@@ -1,4 +1,5 @@
 import { AboutUs } from '@/components/aboutUs'
+import { Benefits } from '@/components/benefits'
 import { HeaderComponent } from '@/components/headerComponent'
 import { Pillars } from '@/components/pillars'
 import { PresentationUnion } from '@/components/presentation'
@@ -14,6 +15,7 @@ export default function Home() {
           <AboutUs />
           <SeparatorY />
           <Pillars />
+          <Benefits/>
         </div>
       </main>
     </>

@@ -22,7 +22,7 @@ export const Pillars = () => {
   return (
     <>
       <section className='w-full flex justify-center mt-[2px] bg-[#1F1D2B] rounded-[20px]'>
-        <div className='w-fll lg:w-[1234px] xl:w-[1224px] lg-plus:w-[1256px] bg-[#1F1D2B] rounded-[20px]'>
+        <div className='w-full lg:w-[1234px] xl:w-[1224px] lg-plus:w-[1256px] bg-[#1F1D2B] rounded-[20px]'>
           <div
             className=' relative w-full border-t-[3px] border-l-[3px] border-r-[3px] border-transparent bg-clip-padding rounded-t-[20px] p-4'
             style={{

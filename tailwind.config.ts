@@ -23,6 +23,7 @@ export default {
       },
       screens: {
         'lg-plus': '1400px',
+        'sm-min': '400px',
       },
       transitionProperty: {
         width: 'width',
