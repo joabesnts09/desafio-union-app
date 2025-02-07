@@ -14,7 +14,7 @@ export const CardBenefits = ({
   return (
     <>
       <div
-        className={`flex flex-col items-center w-[375px] md:w-full md:gap-[5.8rem] md:items-start  ${
+        className={`w-full sm-min:w-[375px] flex flex-col items-center md:w-full md:gap-[5.8rem] md:items-start  ${
           isReversed
             ? 'md:flex-row-reverse'
             : 'md:flex-row justify-start'
@@ -34,7 +34,7 @@ export const CardBenefits = ({
         >
           <div className='flex justify-center'>
             <h3
-              className={`text-center text-lg text-white font-[700] md:text-[32px]
+              className={`text-center text-lg text-wrap text-white font-[700] md:text-[32px]
               ${isReversed ? 'md:text-end' : 'md:text-start'}
               
               `}
@@ -43,7 +43,7 @@ export const CardBenefits = ({
             </h3>
           </div>
           <p
-            className={`leading-[150%] text-center text-base text-[#D7D7D7] mt-3 md:text-2xl md:mt-0 md:max-w-[700px] ${
+            className={`leading-[150%] text-center text-wrap text-base text-[#D7D7D7] mt-3 md:text-2xl md:mt-0 md:max-w-[700px] ${
               isReversed ? 'md:text-end' : 'md:text-start'
             }`}
           >
