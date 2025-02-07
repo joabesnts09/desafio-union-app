@@ -24,7 +24,7 @@ export const Pillars = () => {
       <section className='w-full flex justify-center mt-[2px] bg-[#1F1D2B] rounded-[20px]'>
         <div className='w-full lg:w-[1234px] xl:w-[1224px] lg-plus:w-[1256px] bg-[#1F1D2B] rounded-[20px]'>
           <div
-            className=' relative w-full border-t-[3px] border-l-[3px] border-r-[3px] border-transparent bg-clip-padding rounded-t-[20px] p-4'
+            className='relative w-full border-t-[3px] border-l-[3px] border-r-[3px] border-transparent bg-clip-padding rounded-t-[20px] p-4'
             style={{
               backgroundImage:
                 'linear-gradient(#1F1D2B, #1F1D2B), linear-gradient(180deg, #0A45F6, #7D208E, #221E2F)',
@@ -48,7 +48,7 @@ export const Pillars = () => {
                 </h2>
               </header>
 
-              <div className='w-full py-6 px-4 pb-3 bg-[#1F1D2B] md:px-20 md:py-[50px] lg:mb-10'>
+              <div className='w-full py-6 px-4 pb-3 bg-[#1F1D2B] md:px-20 md:py-[50px] lg:mb-10 lg-plus:mb-0'>
                 <p className='text-center z-10 text-base md:text-2xl'>
                   Os pilares que sustentam o formato inovador de aprendizagem do
                   Union é a junção de incríveis metodologias!
@@ -57,7 +57,7 @@ export const Pillars = () => {
             </div>
           </div>
 
-          <div className='mt-10 flex flex-col items-center gap-16 md:flex-row md:flex-wrap md:justify-center md:gap-[51.2px]'>
+          <div className='mt-10 flex flex-col items-center gap-16 md:flex-row md:flex-wrap md:justify-center md:items-start md:gap-[51.2px] lg-plus:flex-nowrap lg-plus:mt-32 lg-plus:gap-[31.2px]'>
             {cardsData.map((card, index) => (
               <CardPilar
                 key={index}
