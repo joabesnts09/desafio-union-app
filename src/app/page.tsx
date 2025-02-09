@@ -1,4 +1,5 @@
 import { AboutUs } from '@/components/aboutUs'
+import { BannerAction } from '@/components/bannerAction'
 import { Benefits } from '@/components/benefits'
 import { HeaderComponent } from '@/components/headerComponent'
 import { Pillars } from '@/components/pillars'
@@ -18,6 +19,9 @@ export default function Home() {
           <Pillars />
           <Benefits/>
           <Steps />
+        </div>
+        <div>
+          <BannerAction />
         </div>
       </main>
     </>
