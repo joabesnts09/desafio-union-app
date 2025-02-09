@@ -65,7 +65,7 @@ export const Steps = () => {
                 />
               ))}
 
-              <div className='absolute top-[15px] right-[41%] h-[calc(100%-1.5rem)] w-[3px] mx-auto bg-gradient-to-b from-[#851D86] via-[#3B0072] to-[#0048FE] rounded-[10px] z-[-1] lg-plus:right-[50%] lg-plus:top-0 lg-plus:h-[calc(100%-14.9rem)]' />
+              <div className="absolute top-[15px] right-[41%] h-[calc(100%-1.5rem)] w-[3px] mx-auto bg-gradient-to-b from-[#851D86] via-[#3B0072] to-[#0048FE] rounded-[10px] z-[-1] lg-plus:right-[50%] lg-plus:top-0 lg-plus:h-[calc(100%-14.9rem)]" />
             </ol>
           </div>
         </div>
