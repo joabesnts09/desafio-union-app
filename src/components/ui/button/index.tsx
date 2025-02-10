@@ -6,11 +6,12 @@ interface IButtonProps {
   className?: string
 }
 
-export const Button = ({ text, onClick, className }: IButtonProps) => {
+export const Button = ({ text, onClick, className, ...props }: IButtonProps) => {
   return (
     <button
       onClick={onClick}
       className={`${className} relative group w-full h-full text-white px-4 py-2 rounded-sm font-semibold overflow-hidden border-2`}
+      {...props}
       style={{
         background: 'transparent',
         border: '2px solid transparent',
