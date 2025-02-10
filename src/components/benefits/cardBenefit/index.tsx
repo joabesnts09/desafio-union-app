@@ -1,3 +1,12 @@
+import { Inter } from 'next/font/google'
+
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-poppins',
+})
+
 interface ICardBenefitsProps {
   title: string
   description: string
@@ -43,7 +52,7 @@ export const CardBenefits = ({
             </h3>
           </div>
           <p
-            className={`leading-[150%] text-center text-wrap text-base text-[#D7D7D7] mt-3 md:text-2xl md:mt-0 md:max-w-[700px] ${
+            className={`${inter.className} leading-[150%] text-center text-wrap text-base text-[#D7D7D7] mt-3 md:text-2xl md:mt-0 md:max-w-[700px] ${
               isReversed ? 'md:text-end' : 'md:text-start'
             }`}
           >

@@ -1,6 +1,15 @@
 import linkedinIcon from '../../../../../public/icons/linkedin-icon.svg'
 import githubIcon from '../../../../../public/icons/github-icon.svg'
 import Image from 'next/image'
+import { Inter } from 'next/font/google'
+
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-poppins',
+})
+
 
 interface ICardTestimonialsProps {
   imgUrl: string
@@ -56,7 +65,7 @@ export const CardTestimonials = ({
             </div>
 
             <h3
-              className={`text-[28px] font-bold  mt-[18px]
+              className={`${inter.className} text-[28px] font-bold  mt-[18px]
               ${isSuper ? 'mt-[24px]' : ''}
               `}
             >
