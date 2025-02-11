@@ -20,12 +20,12 @@ export const InputLabel = ({
         </label>
 
         <input
-          className='w-full pl-4 pr-3 py-3 border border-gray-400 rounded-[10px] bg-transparent focus:outline-none focus:ring-2 focus:ring-transparent focus:border-none'
+          className='w-full pl-4 pr-3 py-3 border-[2px] border-gray-400 rounded-[10px] bg-transparent focus:outline-none focus:ring-2 focus:ring-transparent focus:border-none'
           type={type}
           placeholder={placeholder}
           {...props}
           style={{
-            transition: 'border 0.1s ease-in-out',
+            transition: 'border 0.3s ease-in-out',
             background: 'transparent',
           }}
           onFocus={(e) => {
@@ -36,7 +36,7 @@ export const InputLabel = ({
             e.target.style.backgroundClip = 'padding-box, border-box'
           }}
           onBlur={(e) => {
-            e.target.style.border = '1px solid rgb(189, 189, 189)' 
+            e.target.style.border = '2px solid rgb(189, 189, 189)' 
             e.target.style.backgroundImage = 'none'
           }}
         />

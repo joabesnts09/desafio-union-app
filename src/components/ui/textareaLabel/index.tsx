@@ -25,7 +25,7 @@ export const TextareaLabel = ({
         style={{
           height: '150px',
           resize: 'none',
-          transition: 'border 0.1s ease-in-out',
+          transition: 'border 0.3s ease-in-out',
           background: 'transparent',
         }}
         onFocus={(e) => {
@@ -36,7 +36,7 @@ export const TextareaLabel = ({
           e.target.style.backgroundClip = 'padding-box, border-box'
         }}
         onBlur={(e) => {
-          e.target.style.border = '1px solid rgb(189, 189, 189)' 
+          e.target.style.border = '2px solid rgb(189, 189, 189)' 
           e.target.style.backgroundImage = 'none'
         }}
       />
