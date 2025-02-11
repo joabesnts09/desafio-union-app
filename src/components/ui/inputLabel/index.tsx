@@ -20,15 +20,24 @@ export const InputLabel = ({
         </label>
 
         <input
-          className='w-full pl-4 pr-3 py-3 border-[1px] border-[rgb(189, 189, 189)] bg-clip-padding rounded-[10px] bg-transparent focus:outline-none focus:border-transparent focus:ring-2 focus:ring-offset-2 focus:ring-transparent focus:ring-offset-transparent'
+          className='w-full pl-4 pr-3 py-3 border border-gray-400 rounded-[10px] bg-transparent focus:outline-none focus:ring-2 focus:ring-transparent focus:border-none'
           type={type}
           placeholder={placeholder}
           {...props}
           style={{
-            backgroundImage:
-              'linear-gradient(#1F1D2B, #1F1D2B), linear-gradient(to right, #7D208E, #0A45F6)',
-            backgroundOrigin: 'border-box',
-            backgroundClip: 'padding-box, border-box',
+            transition: 'border 0.1s ease-in-out',
+            background: 'transparent',
+          }}
+          onFocus={(e) => {
+            e.target.style.border = '2px solid transparent'
+            e.target.style.backgroundImage =
+              'linear-gradient(#1F1D2B, #1F1D2B), linear-gradient(to right, #7D208E, #0A45F6)'
+            e.target.style.backgroundOrigin = 'border-box'
+            e.target.style.backgroundClip = 'padding-box, border-box'
+          }}
+          onBlur={(e) => {
+            e.target.style.border = '1px solid rgb(189, 189, 189)' 
+            e.target.style.backgroundImage = 'none'
           }}
         />
 
