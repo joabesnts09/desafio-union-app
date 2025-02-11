@@ -8,6 +8,7 @@ interface IInputProps {
   options?: { value: string; label: string }[]
   selected?: boolean
   checked?: boolean
+  term?: string
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -19,26 +20,27 @@ export const InputCheckOrRadio = ({
   selected,
   onChange,
   checked,
+  term,
   ...props
 }: IInputProps) => {
-  console.log(type)
-
   const isCheckOrRadio = type === 'radio' || type === 'checkbox'
 
   return (
     <div
-      className={`w-full flex gap-3 md:gap-5 
+      className={`w-full flex gap-3 md:gap-5
     ${!name && 'gap-0 mt-[-1.3rem]'}
     ${
       type === 'checkbox'
-        ? 'flex-row-reverse justify-end'
+        ? 'flex-row-reverse items-center justify-end'
         : 'flex-col items-start'
     }
     `}
     >
-      <label className='text-sm text-gray-200 md:text-lg'>
-        {!isCheckOrRadio && <span className='text-red-500'>*</span>} {name}
-      </label>
+      {type === 'radio' && (
+        <label className='text-sm text-gray-200 md:text-lg'>
+          {!isCheckOrRadio && <span className='text-red-500'>*</span>} {name}
+        </label>
+      )}
 
       {type === 'radio' && options.length > 0 ? (
         <div className='flex flex-col gap-2'>
@@ -66,33 +68,41 @@ export const InputCheckOrRadio = ({
           ))}
         </div>
       ) : (
-        <label className='relative inline-flex items-center cursor-pointer'>
-          <input
-            type='checkbox'
-            checked={checked}
-            onChange={onChange}
-            className='sr-only peer'
-          />
-          <div
-            className='w-10 h-10 flex items-center justify-center border-2 transition-all duration-300 peer-focus:outline-none'
-            style={{
-              borderImage: 'linear-gradient(to right, #7D208E, #0A45F6) 1',
-              background: checked
-                ? 'linear-gradient(to right, #7D208E, #0A45F6)'
-                : 'transparent',
-              position: 'relative',
-            }}
-          >
-            {checked && (
-              <span
-                className='text-white font-bold text-3xl'
-                style={{ position: 'absolute' }}
-              >
-                ✓
-              </span>
-            )}
-          </div>
-        </label>
+        <>
+          <label className='text-sm text-gray-200 md:text-lg'>
+            <p className='text-center font-bold text-base text-gray-200 md:text-[20px]'>
+              {name} <span className='underline'>{term}</span>
+            </p>
+          </label>
+
+          <label className='relative inline-flex items-center cursor-pointer'>
+            <input
+              type='checkbox'
+              checked={checked}
+              onChange={onChange}
+              className='sr-only peer'
+            />
+            <div
+              className='w-10 h-10 flex items-center justify-center border-2 transition-all duration-300 peer-focus:outline-none'
+              style={{
+                borderImage: 'linear-gradient(to right, #7D208E, #0A45F6) 1',
+                background: checked
+                  ? 'linear-gradient(to right, #7D208E, #0A45F6)'
+                  : 'transparent',
+                position: 'relative',
+              }}
+            >
+              {checked && (
+                <span
+                  className='text-white font-bold text-3xl'
+                  style={{ position: 'absolute' }}
+                >
+                  ✓
+                </span>
+              )}
+            </div>
+          </label>
+        </>
       )}
 
       {!name && <span className='text-sm text-red-500 hidden'>{msgError}</span>}
