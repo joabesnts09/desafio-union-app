@@ -5,7 +5,7 @@ export const Testimonials = () => {
     <>
       <section
         className='w-full flex justify-center mt-14 md:mt-[15.5rem]'
-        id='testimonials'
+        id='depoimentos'
       >
         <div className='w-full lg:max-w-[1234px] xl:max-w-[1224px] lg-plus:w-[1256px] '>
           <header className='relative'>

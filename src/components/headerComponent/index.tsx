@@ -2,27 +2,48 @@
 
 import Image from 'next/image'
 import logoUnion from '../../../public/imgs/logo-union-developers.svg'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { NavItem } from './navItem'
 import { Button } from '../ui/button'
+import Link from 'next/link'
 
 export const HeaderComponent = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [activeItem, setActiveItem] = useState('Benefícios') 
+  const [activeItem, setActiveItem] = useState('')
+  const [scrolled, setScrolled] = useState(false)
 
   const menuItems = [
-    { name: 'Sobre', href: '#' },
-    { name: 'Pilares', href: '#' },
-    { name: 'Benefícios', href: '#' },
-    { name: 'Etapas', href: '#' },
-    { name: 'Depoimentos', href: '#' },
-    { name: 'Dúvidas', href: '#' },
+    { name: 'Sobre', href: '#sobre' },
+    { name: 'Pilares', href: '#pilares' },
+    { name: 'Benefícios', href: '#beneficios' },
+    { name: 'Etapas', href: '#etapas' },
+    { name: 'Depoimentos', href: '#depoimentos' },
+    { name: 'Dúvidas', href: '#duvidas' },
   ]
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0) 
 
+      for (const item of menuItems) {
+        const section = document.querySelector(item.href)
+        if (section) {
+          const { top, height } = section.getBoundingClientRect()
+          if (top <= 100 && top + height > 100) {
+            setActiveItem(item.name)
+            break
+          }
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
   return (
     <>
-      <header className='w-full bg-[#121119] text-white py-4 px-3 relative lg:p-0'>
+      <header className={`fixed z-[999] w-full bg-[#121119] text-white py-4 px-3 lg:p-0 ${scrolled ? 'shadow-md' : ''}`}>
         <div className='w-full flex items-center justify-between lg:justify-around lg:my-0 lg:py-[22px] lg:w-full'>
+          <Link href='#'>
           <div className='w-[220px] lg:w-[265px] lg:max-w-[265px]'>
             <Image
               className='w-full'
@@ -33,6 +54,7 @@ export const HeaderComponent = () => {
               priority
             />
           </div>
+          </Link>
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -69,6 +91,7 @@ export const HeaderComponent = () => {
                   label={item.name}
                   isActive={activeItem === item.name}
                   onClick={setActiveItem}
+                  link={item.href}
                 />
               ))}
             </ul>

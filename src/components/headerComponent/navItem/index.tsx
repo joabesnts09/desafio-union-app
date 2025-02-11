@@ -1,18 +1,21 @@
-
 interface INavItemProps {
   label: string
   isActive: boolean
   onClick: (label: string) => void
+  link: string
 }
 
-export const NavItem = ({ label, isActive, onClick }: INavItemProps) => {
-
+export const NavItem = ({ label, isActive, onClick, link }: INavItemProps) => {
   return (
-    <li className="w-max relative">
+    <li className='w-max relative'>
       <a
-        href="#"
+        href={link}
         className={` text-[18px] font-bold leading-[2.2rem] cursor-pointer pb-2 lg-plus:text-xl lg:pb-0 transition-all
-          ${isActive ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#7D208E] to-[#0A45F6]' : 'text-gray-300'}
+          ${
+            isActive
+              ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#7D208E] to-[#0A45F6]'
+              : 'text-gray-300'
+          }
           hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#7D208E] hover:to-[#0A45F6]`}
         onClick={() => onClick(label)}
       >
@@ -21,7 +24,9 @@ export const NavItem = ({ label, isActive, onClick }: INavItemProps) => {
 
       <span
         className={`absolute left-0 w-full h-[1px] bg-gradient-to-r from-[#7D208E] to-[#0A45F6] transition-all duration-300 
-          ${isActive ? 'opacity-100' : 'opacity-0'} bottom-[3px] lg:bottom-[-33px] lg-plus:bottom-[-37px]`}
+          ${
+            isActive ? 'opacity-100' : 'opacity-0'
+          } bottom-[3px] lg:bottom-[-33px] lg-plus:bottom-[-37px]`}
       ></span>
     </li>
   )

@@ -3,7 +3,7 @@ export const AboutUs = () => {
   
   return (
     <>
-      <section className='mt-8 mx-auto' id='aboutUs'>
+      <section className='mt-8 mx-auto' id='sobre'>
         <div
           className='relative xl:w-[1224px] lg-plus:w-[1256px] pt-[35px] px-4 pb-6 bg-[#1F1D2B] rounded-3xl border-[3px] border-transparent bg-clip-padding md:px-[80px] md:py-[50px]'
           style={{

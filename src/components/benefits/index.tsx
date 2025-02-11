@@ -54,7 +54,7 @@ export const Benefits = () => {
 
   return (
     <>
-      <section className='w-full flex justify-center mt-14 md:mt-[15.5rem]' id='benefits'>
+      <section className='w-full flex justify-center mt-14 md:mt-[15.5rem]' id='beneficios'>
 
         <div className='w-full lg:w-[1234px] xl:w-[1224px] lg-plus:w-[1256px] '>
 
