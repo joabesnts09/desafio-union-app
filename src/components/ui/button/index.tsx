@@ -4,19 +4,25 @@ interface IButtonProps {
   text: string
   onClick?: () => void
   className?: string
+  type?: 'button' | 'submit' | 'reset'
+  disabled?: boolean
 }
 
 export const Button = ({
   text,
   onClick,
   className,
-  ...props
+  type = 'button',
+  disabled,
 }: IButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className={`${className} relative group w-full h-full text-white px-4 py-2 rounded-sm font-semibold overflow-hidden border-2`}
-      {...props}
+      className={`${className} relative group w-full h-full text-white px-4 py-2 rounded-sm font-semibold overflow-hidden border-2
+      ${disabled && 'cursor-not-allowed'}
+      `}
+      type={type}
+      disabled={disabled}
       style={{
         background: 'transparent',
         border: '2px solid transparent',

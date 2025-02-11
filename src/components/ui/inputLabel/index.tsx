@@ -1,33 +1,67 @@
-'use client'
+import { useEffect, useState } from 'react'
+import { UseFormRegister, UseFormWatch } from 'react-hook-form'
+import { TFormData } from '@/schemas/formeSchema'
+
 interface IInputProps {
-  name: string
+  label: string
   placeholder: string
   msgError?: string
   type?: string
+  register: UseFormRegister<TFormData>
+  name: keyof TFormData
+  watch: UseFormWatch<TFormData>
 }
+
 export const InputLabel = ({
-  name,
+  label,
   placeholder,
   msgError,
   type = 'text',
-  ...props
+  register,
+  name,
+  watch,
 }: IInputProps) => {
-  return (
-    <>
-      <div className='w-full flex flex-col gap-3 md:gap-5 items-start'>
-        <label className='text-sm text-gray-200 md:text-lg'>
-          <span className='text-red-500'>*</span> {name}
-        </label>
+  const [borderColor, setBorderColor] = useState('2px solid rgb(189, 189, 189)')
+  const [isTouched, setIsTouched] = useState(false)
 
+  useEffect(() => {
+    if (!isTouched) return
+
+    const value = watch(name)
+    if (msgError || (typeof value === 'string' && value.trim() === '')) {
+      setBorderColor('2px solid #EF4444')
+    } else {
+      setBorderColor('2px solid rgb(189, 189, 189)')
+    }
+  }, [watch(name), msgError, isTouched])
+
+  return (
+    <div className='w-full flex flex-col gap-3 md:gap-5 items-start'>
+      <label htmlFor={name} className='text-sm text-gray-200 md:text-lg'>
+        <span className='text-red-500'>*</span> {label}
+      </label>
+
+      <div className='relative w-full'>
         <input
-          className='w-full pl-4 pr-3 py-3 border-[2px] border-gray-400 rounded-[10px] bg-transparent focus:outline-none focus:ring-2 focus:ring-transparent focus:border-none'
+          id={name}
           type={type}
           placeholder={placeholder}
-          {...props}
-          style={{
-            transition: 'border 0.3s ease-in-out',
-            background: 'transparent',
-          }}
+          {...register(name, {
+            onBlur: (e) => {
+              setIsTouched(true)
+              e.target.style.border = borderColor
+              e.target.style.backgroundImage = 'none'
+            },
+          })}
+          className={`
+            w-full pl-4 pr-3 py-3 border-[2px] rounded-[10px] bg-transparent 
+            focus:outline-none transition-all duration-300
+            focus:border-transparent focus:ring-2 focus:ring-transparent
+            placeholder-[#767479]
+
+            ${msgError && 'text-red-500'}
+          `}
+          style={{ border: borderColor }}
           onFocus={(e) => {
             e.target.style.border = '2px solid transparent'
             e.target.style.backgroundImage =
@@ -35,14 +69,12 @@ export const InputLabel = ({
             e.target.style.backgroundOrigin = 'border-box'
             e.target.style.backgroundClip = 'padding-box, border-box'
           }}
-          onBlur={(e) => {
-            e.target.style.border = '2px solid rgb(189, 189, 189)' 
-            e.target.style.backgroundImage = 'none'
-          }}
         />
-
-        <span className='text-sm text-red-500 hidden'>{msgError}</span>
       </div>
-    </>
+
+      {msgError && (
+        <span className='text-sm text-red-500 mt-[-0.8rem]'>{msgError}</span>
+      )}
+    </div>
   )
 }

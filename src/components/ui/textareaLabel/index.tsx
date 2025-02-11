@@ -1,32 +1,65 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+import { TFormData } from '@/schemas/formeSchema'
+import { UseFormRegister, UseFormWatch } from 'react-hook-form'
+
 interface ITextareaProps {
-  name: string
+  label: string
   placeholder: string
   msgError?: string
+  register: UseFormRegister<TFormData>
+  name: keyof TFormData
+  watch: UseFormWatch<TFormData>
 }
 
 export const TextareaLabel = ({
-  name,
+  label,
   placeholder,
   msgError,
-  ...props
+  register,
+  name,
+  watch,
 }: ITextareaProps) => {
+  const [borderColor, setBorderColor] = useState('2px solid rgb(189, 189, 189)')
+  const [isTouched, setIsTouched] = useState(false)
+
+  useEffect(() => {
+    if (!isTouched) return
+
+    const value = watch(name)
+    if (msgError || (typeof value === 'string' && value.trim() === '')) {
+      setBorderColor('2px solid #EF4444')
+    } else {
+      setBorderColor('2px solid rgb(189, 189, 189)')
+    }
+  }, [watch(name), msgError, isTouched])
+
   return (
     <div className='w-full flex flex-col gap-3 md:gap-5 items-start'>
-      <label className='text-sm text-gray-200 md:text-lg'>
-        <span className='text-red-500'>*</span> {name}
+      <label htmlFor={name} className='text-sm text-gray-200 md:text-lg'>
+        <span className='text-red-500'>*</span> {label}
       </label>
 
       <textarea
-        className='w-full pl-4 pr-3 py-3 border border-gray-400 rounded-[10px] bg-transparent focus:outline-none focus:ring-2 focus:ring-transparent focus:border-none'
+        className={`w-full pl-4 pr-3 py-3 border rounded-[10px] bg-transparent focus:outline-none focus:ring-2 focus:ring-transparent placeholder-[#767479]
+          ${msgError && 'text-red-500'}  
+        `}
         placeholder={placeholder}
-        {...props}
+        {...register(name, {
+          onBlur: (e) => {
+            setIsTouched(true)
+            e.target.style.border = borderColor
+            e.target.style.backgroundImage = 'none'
+          },
+        })}
+        id={name}
         style={{
           height: '150px',
           resize: 'none',
           transition: 'border 0.3s ease-in-out',
           background: 'transparent',
+          border: borderColor,
         }}
         onFocus={(e) => {
           e.target.style.border = '2px solid transparent'
@@ -35,13 +68,11 @@ export const TextareaLabel = ({
           e.target.style.backgroundOrigin = 'border-box'
           e.target.style.backgroundClip = 'padding-box, border-box'
         }}
-        onBlur={(e) => {
-          e.target.style.border = '2px solid rgb(189, 189, 189)' 
-          e.target.style.backgroundImage = 'none'
-        }}
       />
 
-      <span className='text-sm text-red-500 hidden'>{msgError}</span>
+      {msgError && (
+        <p className='text-red-500 text-xs mt-[-0.8rem]'>{msgError}</p>
+      )}
     </div>
   )
 }
