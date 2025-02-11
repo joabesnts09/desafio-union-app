@@ -9,6 +9,7 @@ import { Steps } from '@/components/steps'
 import { Testimonials } from '@/components/testimonials'
 import { SeparatorY } from '@/components/ui/separatorY'
 import { Questions } from '@/components/questions'
+import { Footer } from '@/components/footer'
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
           <Questions />
         </div>
       </main>
+      <Footer />
     </>
   )
 }
