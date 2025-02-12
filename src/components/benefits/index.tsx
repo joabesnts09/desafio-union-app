@@ -1,4 +1,12 @@
 import { CardBenefits } from './cardBenefit'
+import rocketImg from '../../../public/imgs/beneficios/Vector.svg'
+import vectorImg from '../../../public/imgs/beneficios/Vector.svg'
+import GameImg from '../../../public/imgs/beneficios/game_controller.svg'
+import starImg from '../../../public/imgs/beneficios/star.svg'
+import planetImg from '../../../public/imgs/beneficios/planet.svg'
+import likeImg from '../../../public/imgs/beneficios/like.svg'
+import bulbImg from '../../../public/imgs/beneficios/bulb_on.svg'
+import profileImg from '../../../public/imgs/beneficios/profile-2.svg'
 
 export const Benefits = () => {
   const dataBenefits = [
@@ -6,49 +14,49 @@ export const Benefits = () => {
       title: 'Preparação para o mercado',
       description:
         'Os membros são equipados com uma compreensão profunda das práticas de mercado, permitindo-lhes ingressar no setor com confiança e conhecimento.',
-      imgUrl: 'https://media.graphassets.com/qssZQEUSEaAQoM6oznCw',
+      imgUrl: rocketImg,
     },
     {
       title: 'Aprendizado de novas tecnologias e ferramentas',
       description:
         'Os membros são expostos a uma variedade de tecnologias e ferramentas relevantes, expandindo suas habilidades e conhecimentos.',
-      imgUrl: 'https://media.graphassets.com/tsqge8g9TpyED5o5iVr6',
+      imgUrl: vectorImg,
     },
     {
       title: 'Desenvolvimento de hard skills',
       description:
         'Através de projetos reais, os membros fortalecem suas habilidades técnicas, aumentando sua capacidade de contribuir de forma eficaz em ambientes profissionais.',
-      imgUrl: 'https://media.graphassets.com/XH5lk8IJQ1Cz1M2AE1Lu',
+      imgUrl: GameImg,
     },
     {
       title: 'Desenvolvimento de soft skills',
       description:
         'Além das competências técnicas, os membros aprimoram habilidades interpessoais cruciais, como comunicação eficaz, resolução de conflitos e trabalho em equipe.',
-      imgUrl: 'https://media.graphassets.com/eBMuKBvTLulsEbZySGwt',
+      imgUrl: starImg,
     },
     {
       title: 'Ambiente imersivo',
       description:
         'O Union oferece uma oportunidade única de aplicar conhecimentos teóricos em cenários do mundo real, proporcionando uma experiência diferenciada e valiosa.',
-      imgUrl: 'https://media.graphassets.com/2S5Pdk5oShOJUlIz8p7X',
+      imgUrl: planetImg,
     },
     {
       title: 'Networking',
       description:
         'A participação no Union expande sua rede de contatos, abrindo portas para colaborações futuras e oportunidades profissionais.',
-      imgUrl: 'https://media.graphassets.com/WR1yF2qGRmm8jWLCyw0D',
+      imgUrl: likeImg,
     },
     {
       title: 'Domínio de metodologias ágeis',
       description:
         'Através da vivência prática, os membros aprendem a aplicar metodologias ágeis como Scrum, preparando-os para ambientes de trabalho colaborativos.',
-      imgUrl: 'https://media.graphassets.com/KHCFnl40RyKQqOx6Bjuz',
+      imgUrl: bulbImg,
     },
     {
       title: 'Mentória',
       description:
         'Os mentores experientes oferecem orientação valiosa, proporcionando uma trajetória de aprendizado mais suave e eficiente.',
-      imgUrl: 'https://media.graphassets.com/sanArFzbQUipTnjRVl78',
+      imgUrl: profileImg,
     },
   ]
 
