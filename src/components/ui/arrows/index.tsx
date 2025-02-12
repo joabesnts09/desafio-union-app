@@ -9,7 +9,7 @@ interface IArrowProps {
 export const ArrowNext = ({ className }: IArrowProps) => {
   return (
     <>
-      <Image src={arrowNext} alt='Arrow Next' />
+      <Image className={className} src={arrowNext} alt='Arrow Next' />
     </>
   )
 }
@@ -17,7 +17,7 @@ export const ArrowNext = ({ className }: IArrowProps) => {
 export const ArrowBack = ({ className }: IArrowProps) => {
   return (
     <>
-      <Image src={arrowBack} alt='Arrow Back' />
+      <Image className={className} src={arrowBack} alt='Arrow Back' />
     </>
   )
 }

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { formSchema, TFormData, TUserFormRegister } from '../../../schemas/formeSchema'
+import { formSchema, TFormData } from '../../../schemas/formeSchema'
 import { StepOne } from './stepOne'
 import { StepTwo } from './stepTwo'
 import { StepThree } from './stepThree'
@@ -16,7 +16,7 @@ interface IFormProps {
   findForm: boolean
 }
 
-export const RegisterForm = ({ setIsForm, setFindForm, setFindFormError, findForm }: IFormProps) => {
+export const RegisterForm = ({ setIsForm, setFindForm, findForm }: IFormProps) => {
   const [step, setStep] = useState(1)
 
   const methods = useForm<TFormData>({

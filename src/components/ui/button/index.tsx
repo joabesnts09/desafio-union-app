@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion'
-
 interface IButtonProps {
   text: string
   onClick?: () => void
