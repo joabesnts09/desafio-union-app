@@ -24,4 +24,4 @@ Este repositório contém a solução para o desafio técnico de frontend, onde 
   - rodo um npm install e em seguida, npm run dev
 
 ## Deploy do projeto
-```https://desafio-union-app.vercel.app/
+```https://desafio-union-app.vercel.app/```
