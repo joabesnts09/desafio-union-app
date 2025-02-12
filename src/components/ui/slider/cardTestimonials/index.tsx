@@ -57,11 +57,16 @@ export const CardTestimonials = ({
                 backgroundClip: 'padding-box, border-box',
               }}
             >
-              <img
-                className='w-[90px] h-[90px] rounded-full'
+             <div className='w-[90px] h-[90px]'>
+             <Image 
+                className=' rounded-full'
                 src={imgUrl}
                 alt='Image Profile'
+                height={90}
+                width={90}
+                style={{ objectFit: "cover" }}
               />
+             </div>
             </div>
 
             <h3

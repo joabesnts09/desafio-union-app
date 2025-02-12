@@ -38,7 +38,7 @@ export const HeaderComponent = () => {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [menuItems])
   return (
     <>
       <header className={`fixed z-[999] w-full bg-[#121119] text-white py-4 px-3 lg:p-0 ${scrolled ? 'shadow-md' : ''}`}>

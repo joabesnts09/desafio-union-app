@@ -38,7 +38,7 @@ export const StepThree = ({ prevStep }: IStepThreeProps) => {
 
   useEffect(() => {
     setIsFormValid(!!validateForm())
-  }, [values])
+  }, [values, validateForm])
 
   return (
     <>

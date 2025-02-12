@@ -33,7 +33,7 @@ export const InputLabel = ({
     } else {
       setBorderColor('2px solid rgb(189, 189, 189)')
     }
-  }, [watch(name), msgError, isTouched])
+  }, [name, watch, msgError, isTouched])
 
   return (
     <div className='w-full flex flex-col gap-3 md:gap-5 items-start'>

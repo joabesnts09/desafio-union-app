@@ -38,7 +38,7 @@ export const StepTwo = ({
 
   useEffect(() => {
     setIsFormValid(!!validateForm())
-  }, [values])
+  }, [values, validateForm])
 
   return (
     <>

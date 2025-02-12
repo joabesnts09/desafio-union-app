@@ -41,7 +41,7 @@ export const StepOne = ({
 
   useEffect(() => {
     setIsFormValid(!!validateForm())
-  }, [values])
+  }, [values, validateForm])
   return (
     <>
       <motion.div
