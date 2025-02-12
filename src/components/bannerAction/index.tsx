@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import curvedRender from '../../../public/imgs/curved_render.svg'
+import Link from 'next/link'
 
 export const BannerAction = () => {
   const [isBlinking, setIsBlinking] = useState(false)
@@ -42,12 +43,15 @@ export const BannerAction = () => {
                 Inscreva-se já! Vagas limitadas
               </h3>
 
-              <a href='h-[47px] w-full lg-plus:h-[69px] lg-plus:w-[422px]'>
+              <Link
+                href='#register'
+                className='h-[47px] w-full lg-plus:h-[69px] lg-plus:w-[422px]'
+              >
                 <Button
                   className='max-w-[300px] lg-plus:max-w-[422px] lg-plus:w-[422px] lg-plus:h-[69px]'
                   text='Inscreva-se agora'
                 />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

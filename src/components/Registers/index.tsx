@@ -20,6 +20,7 @@ export const Registers = () => {
     <>
       <section
         className='w-full flex justify-center mt-[1.6rem]'
+        id='register'
       >
         <div
           className='w-full max-w-[1042px] rounded-[10px] py-[32px] px-6 md:py-[56px] md:px-[56px]'

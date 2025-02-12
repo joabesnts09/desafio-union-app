@@ -1,3 +1,5 @@
+'use client'
+import { motion } from 'framer-motion'
 import { Inter } from 'next/font/google'
 
 interface ICardStepProps {
@@ -63,14 +65,20 @@ export const CardStep = ({
             </span>
           </div>
 
-          <div className='flex flex-col justify-center items-center gap-[12.8px] text-center'>
+          <motion.div
+            className='flex flex-col justify-center items-center gap-[12.8px] text-center'
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true }}
+          >
             <h3 className='text-[20px] font-bold text-gray-200 leading-[1] lg-plus:text-2xl'>
               {title}
             </h3>
             <p className='text-base text-gray-200 leading-[1.5] lg-plus:text-[22px]'>
               {description}
             </p>
-          </div>
+          </motion.div>
         </div>
         <div
           className={`hidden relative lg-plus:flex  h-[4px] border-t-[4px] border-transparent

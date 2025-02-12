@@ -89,7 +89,7 @@ export const CardTestimonials = ({
 
           <div className='flex gap-[1.7rem] items-center justify-center'>
             <a
-              className='w-[60px] h-[60px] flex flex-col items-center justify-center'
+              className='w-[60px] h-[60px] flex flex-col items-center justify-center hover:brightness-75 transition-all duration-300'
               href={linkedinUrl}
               target='_blank'
             >
@@ -98,7 +98,7 @@ export const CardTestimonials = ({
             </a>
 
             <a
-              className='w-[60px] h-[60px] flex flex-col items-center justify-center'
+              className='w-[60px] h-[60px] flex flex-col items-center justify-center hover:brightness-75 transition-all duration-300'
               href={githubUrl}
               target='_blank'
             >

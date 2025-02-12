@@ -96,13 +96,13 @@ export const HeaderComponent = () => {
               ))}
             </ul>
 
-            <div className='mt-4 mb-4 w-[190px] h-[59px] lg:w-[167px] lg-plus:w-[300px] lg:mt-0 lg:hidden'>
-              <Button className='text-lg tracking-wider' text='Junte-se a nós'/>
-            </div>
+            <Link href='#register' className='mt-4 mb-4 w-[190px] h-[59px] lg:w-[167px] lg-plus:w-[300px] lg:mt-0 lg:hidden'>
+              <Button className='text-lg tracking-wider' onClick={() => setMenuOpen(false)} text='Junte-se a nós'/>
+            </Link>
           </nav>
-          <div className='mt-4 hidden lg:mt-0 w-[180px] h-[59px] lg:w-[167px] lg-plus:w-[300px] lg:flex'>
+          <Link href='#register' className='mt-4 hidden lg:mt-0 w-[180px] h-[59px] lg:w-[167px] lg-plus:w-[300px] lg:flex'>
             <Button text='Junte-se a nós'/>
-          </div>
+          </Link>
         </div>
       </header>
     </>
