@@ -2,7 +2,7 @@
 import { Infos } from './infos'
 import { Inter } from 'next/font/google'
 import { RegisterForm } from './registerForm'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const inter = Inter({
   subsets: ['latin'],

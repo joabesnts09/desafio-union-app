@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import logoUnion from '../../../public/imgs/logo-union-developers.svg'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { NavItem } from './navItem'
 import { Button } from '../ui/button'
 import Link from 'next/link'
@@ -12,33 +12,34 @@ export const HeaderComponent = () => {
   const [activeItem, setActiveItem] = useState('')
   const [scrolled, setScrolled] = useState(false)
 
-  const menuItems = [
+  const menuItems = useMemo(() => [
     { name: 'Sobre', href: '#sobre' },
     { name: 'Pilares', href: '#pilares' },
     { name: 'Benefícios', href: '#beneficios' },
     { name: 'Etapas', href: '#etapas' },
     { name: 'Depoimentos', href: '#depoimentos' },
     { name: 'Dúvidas', href: '#duvidas' },
-  ]
+  ], []); 
+  
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 0) 
-
+      setScrolled(window.scrollY > 0);
+  
       for (const item of menuItems) {
-        const section = document.querySelector(item.href)
+        const section = document.querySelector(item.href);
         if (section) {
-          const { top, height } = section.getBoundingClientRect()
+          const { top, height } = section.getBoundingClientRect();
           if (top <= 100 && top + height > 100) {
-            setActiveItem(item.name)
-            break
+            setActiveItem(item.name);
+            break;
           }
         }
       }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [menuItems])
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [menuItems]);
   return (
     <>
       <header className={`fixed z-[999] w-full bg-[#121119] text-white py-4 px-3 lg:p-0 ${scrolled ? 'shadow-md' : ''}`}>

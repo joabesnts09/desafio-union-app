@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import { Inter } from 'next/font/google'
+import Image from 'next/image'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -33,10 +34,12 @@ export const CardBenefits = ({
         viewport={{ once: true }}
       >
         <div className={`flex w-max`}>
-          <img
+          <Image
             className='w-[80px] md:w-[180px] lg:w-[260px] max-w-[160px]'
             src={imgUrl}
             alt={title}
+            width={260}
+            height={260}
           />
         </div>
 
